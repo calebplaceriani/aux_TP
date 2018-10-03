@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1538590665 source:c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\tp22k18\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+	<strings.h>
+	<string.h>
+
+1538590563 c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\tp22k18\arrayemployees.h
+
+1538335560 source:c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\testdefunciones\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+	<string.h>
+
+1538335514 c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\testdefunciones\funciones.h
+
+1538417446 c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\tp22k18\funciones.h
+
+1538587309 source:c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\tp22k18\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+	<string.h>
+
+1538590563 source:c:\users\emanuelplaceriani\documents\programming\utn 2018\t.p.'s\tp22k18\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
