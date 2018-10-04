@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include "ArrayEmployees.h"
 #include "Funciones.h"
-#define CANT_EMPLEADOS 10 //cambiar cant empleados a 1000
+#define CANT_EMPLEADOS 1000
 
 int main()
 {
     Employee empleados[CANT_EMPLEADOS];
     inicializarEmpleado(empleados,CANT_EMPLEADOS);
     int opcionMenu=0,indiceLibre,id,idAux;
+    int cargaMinima=0;
+    float salarioPromedio;
 
 
 do
@@ -94,6 +96,12 @@ do
              {
                 if(ordenarEmpleados(empleados,CANT_EMPLEADOS)==0)
                 mostrarEmpleados(empleados,CANT_EMPLEADOS);
+
+                salarioPromedio=informeSalarioEmpleado(empleados,CANT_EMPLEADOS);
+                if(salarioPromedio!=-1)
+                {
+
+                }
                 else
                 {
                     system("cls");
@@ -101,7 +109,7 @@ do
                 }
              }
              else
-                printf("\n ERROR - CARGUE AL MENOS UN EMPLEADO PARA UTILIZAR ESTA OPCION");
+                printf("\nERROR - CARGUE AL MENOS UN EMPLEADO PARA UTILIZAR ESTA OPCION");
                 break;
     case 5:
             break;

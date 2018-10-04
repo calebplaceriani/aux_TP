@@ -190,23 +190,28 @@ int bajaDeEmpleado(Employee* empleados,int id,int len)
 int ordenarEmpleados(Employee* empleados,int len)
 {
     int retorno=-1;
-    int i;
-    char auxApellido[52];
+    int i,flagswap;
+    Employee auxEmpleado;
 
     if(empleados!=NULL && len > 1)
      {
-        for(i=0;i<len;i++)
+      do
         {
-            if(strcmp(empleados[i].apellido,empleados[i+1].apellido)>0)
+            flagswap=0;
+            for(i=0;i<len-1;i++)
             {
-                strcpy(auxApellido,empleados[i].apellido);
-                strcpy(empleados[i].apellido,empleados[i+1].apellido);
-                strcpy(empleados[i+1].apellido,auxApellido);
-
+                if(strcmp(empleados[i].apellido,empleados[i+1].apellido)>0)
+                {
+                    auxEmpleado=empleados[i];
+                    empleados[i]=empleados[i+1];
+                    empleados[i+1]=auxEmpleado;
+                    flagswap=1;
+                }
+                retorno = 0;
             }
-            retorno = 0;
-        }
+         }while(flagswap);
      }
+
     return retorno;
 }
 
@@ -215,18 +220,31 @@ int informeSalarioEmpleado(Employee* empleado, int len)
     int retorno=-1;
     int i;
     float acumSalario=0;
+    int empleadosPromedio=0;
     int cantEmpleadosCargados=0;
     float salarioPromedio;
-
-    for(i=0;i<len;i++)
+    if(empleado!=NULL && len>0)
     {
-        if(empleado[i].isEmpty==0)
+        for(i=0;i<len;i++)
         {
-            cantEmpleadosCargados++;
-            acumSalario+=empleado[i].salario;
+            if(empleado[i].isEmpty==0)
+            {
+                cantEmpleadosCargados++;
+                acumSalario+=empleado[i].salario;
+            }
         }
+        salarioPromedio=acumSalario/cantEmpleadosCargados;
+        printf("\n\nEl salario promedio es: %.2f",salarioPromedio);
+
+        for(i=0;i<len;i++)
+        {
+            if(empleado[i].salario>salarioPromedio)
+            empleadosPromedio++;
+        }
+        printf("\n\nLa cantidad de empleados arriba del salario promedio es:%d \n\n", empleadosPromedio);
+        retorno = 0;
     }
-    salarioPromedio=acumSalario/cantEmpleadosCargados;
+
 
     return retorno;
 }
